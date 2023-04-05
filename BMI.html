@@ -1,0 +1,307 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.9.0/build/ol.js"></script>
+		<script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+	
+			<script src='https://unpkg.com/@turf/turf@6/turf.min.js'></script>
+
+		<title>專欄文章</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">回主頁</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+
+						<style>
+							html,body{ 
+							  margin: 0px;
+							  padding: 0px;
+							  height:100%;
+							}
+							#map {
+							  margin: 0px;
+							  padding: 0px;
+							  height: 100%;
+							  width: 100%;        
+							}      
+						  </style>
+
+
+
+					</header>
+
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>BMI計算機</h1>
+							<center><span class="symbol"><img src="images/BMI.svg" alt="" /></span></center>
+
+
+							<p>身體質量指數（英語：Body Mass Index，簡稱BMI）又稱凱特萊指數（Quetelet index，/kɛtəˈleɪ/），簡稱體質指數，是由一個人的質量（體重）和身高計算出的一個數值。BMI的定義是體重除以身高的平方，以公斤/平方公尺為單位表示，由質量（公斤）和身高（公尺）得出。</p>
+							<p><i>摘自維基百科</i></p>
+
+							<form method="post" action="#" id= form>
+								<div class="fields">
+									<div class="field half">
+										<input type="text" name="name" id="name" placeholder="姓名" />
+									</div>
+
+									<div class="field half">
+										<input type="text" name="sign" id="sign" placeholder="星座" />
+									</div>
+
+									<div class="field half">
+										<input type="text" name="height" id="height" placeholder="身高" />
+									</div>
+
+									<div class="field half">
+										<input type="text" name="weight" id="weight" placeholder="體重" />
+									</div>
+
+									</div>
+								</div>
+
+
+								<div id="map" class="map"></div>
+
+
+
+								<center><button id='BMI' type="button" >計算BMI</button></center>
+
+							</form>
+							<div id="para" style="display:none">
+
+							<center><div id="para1">NA</div></center>
+							<center><div id="para2">NA</div></center>
+								</div>
+						<div id="hidden" style="display:none">
+
+							<center><button id='DownloadJSON' type="button" >下載JSON檔案</button></center>
+						</div>
+
+
+							<a id="downloadAnchorElem" style="display:none"></a>
+
+							<span class="image main"><img src="images/article5.jpg" alt="" /></span>
+
+
+						</div>
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<div class="inner">
+						<section>
+							<h2>聯繫我</h2>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field half">
+										<input type="text" name="name" id="name" placeholder="姓名" />
+									</div>
+									<div class="field half">
+										<input type="email" name="email" id="email" placeholder="郵件" />
+									</div>
+									<div class="field">
+										<textarea name="message" id="message" placeholder="說說話"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="送出" class="primary" /></li>
+								</ul>
+
+
+							</form>
+						</section>
+						<section>
+							<h2>追蹤</h2>
+							<ul class="icons">
+								<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+								<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+								<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+								<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+							</ul>
+						</section>
+						<ul class="copyright">
+							<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+
+
+			<script>  
+
+//map
+var projection = ol.proj.get('EPSG:3857');
+      var projectionExtent = projection.getExtent();
+      var size = ol.extent.getWidth(projectionExtent) / 256;
+      var resolutions = new Array(20);
+      var matrixIds = new Array(20);
+      for (var z = 0; z < 20; ++z) {
+        resolutions[z] = size / Math.pow(2, z);
+        matrixIds[z] = z;
+      }/**/
+
+      var map = new ol.Map({            //create a OpenLayers Map object  
+        target: 'map',         
+        layers: [
+          new ol.layer.Tile({    //Google map
+              source: new ol.source.XYZ({
+                crossOrigin: 'anonymous',
+                url: 'https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i{z}!2i{x}!3i{y}!4i256!2m3!1e0!2sm!3i570286820!3m17!2sen!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjF8cy5lOmwudHxwLnY6b2ZmLHMudDoxOXxzLmU6bC50fHAudjpvZmYscy50OjIwfHMuZTpsLnR8cC52Om9mZixzLnQ6ODF8cy5lOmwudHxwLnY6b2ZmLHMudDo4MnxzLmU6Zy5mfHAudjpvbnxwLmM6I2ZmZTBlZmVmLHMudDo4MnxzLmU6bC50fHAudjpvZmYscy50OjJ8cy5lOmcuZnxwLnY6b258cC5oOiMxOTAwZmZ8cC5jOiNmZmMwZThlOCxzLnQ6MnxzLmU6bC50fHAudjpvZmYscy50OjJ8cy5lOmwuaXxwLnY6b2ZmLHMudDozfHMuZTpnfHAubDoxMDB8cC52OnNpbXBsaWZpZWQscy50OjN8cy5lOmx8cC52Om9mZixzLnQ6NHxzLmU6bC50fHAudjpvZmYscy50OjR8cy5lOmwuaXxwLnY6b2ZmLHMudDo2NXxzLmU6Z3xwLnY6b258cC5sOjcwMCxzLnQ6NnxwLmM6I2ZmN2RjZGNk!4e0',
+                visibile: false,
+              }),/**/
+          })
+        ],
+        view: new ol.View({
+          center: ol.proj.transform([121.751,23.8],'EPSG:4326','EPSG:3857'),
+          zoom: 4  //8
+        })
+      });
+
+
+
+				$(function(){   
+				
+					
+
+					
+				//$(document).ready(function(){ });
+				  $("#BMI").click(function(){
+					var x = document.getElementById("para");
+					if (x.style.display === "none") {
+						x.style.display = "block";
+					}
+
+					var x = document.getElementById("hidden");
+					if (x.style.display === "none") {
+						x.style.display = "block";
+					}
+
+					var form = $(this);
+
+					//轉換String to JSON
+
+					var data=$('#form').serializeArray()
+					function objectifyForm(formArray) {
+					//serialize data function
+					var returnArray = {};
+					for (var i = 0; i < formArray.length; i++){
+						returnArray[formArray[i]['name']] = formArray[i]['value'];
+					}
+					return returnArray;
+
+
+
+				}
+				
+
+
+
+				var data=objectifyForm(data)
+ 
+
+				console.log(data)
+				console.log(data.name)
+				console.log(data.sign)
+				var BMI = data.weight/data.height/data.height*10000
+				console.log(BMI)
+				//object["BMI"] = BMI;
+				data.BMI = BMI;
+
+
+				//$("#para1").css("color","red").css("background-color","black");        
+				$("#para1").html(data.name+"的身體質量指數："+BMI);   
+
+				if(BMI>=35 ){
+				$("#para2").css("color","red");        
+				$("#para2").html("狀態：重度肥胖");   
+				data.state = "重度肥胖";
+				}else if(BMI<35 && BMI>=30){
+				$("#para2").css("color","red");        
+				$("#para2").html("狀態：中度肥胖");   
+				data.state = "中度肥胖";
+				}else if(BMI<30 && BMI>=27){
+				$("#para2").css("color","red");        
+				$("#para2").html("狀態：輕度肥胖");   
+				data.state = "輕度肥胖";
+				}else if(BMI<27 && BMI>=24){
+				$("#para2").html("狀態：過重");   
+				data.state = "過重";
+				}else if(BMI<24 && BMI>=18.5){
+				$("#para2").html("狀態：標準");   
+				data.state = "標準";
+				}else if(BMI<18.5 ){
+				$("#para2").html("狀態：過瘦");   
+				data.state = "過瘦";
+
+				}
+
+				globalThis.data= data
+
+
+				  });
+				});      
+
+				$(function(){   
+				
+
+				$("#DownloadJSON").click(function(){
+					
+					var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data));
+					var dlAnchorElem = document.getElementById('downloadAnchorElem');
+					dlAnchorElem.setAttribute("href",     dataStr     );
+					dlAnchorElem.setAttribute("download", "BMI.json");
+					dlAnchorElem.click();
+
+					console.log("aaa")
+					})
+				});  
+			  </script>
+
+
+
+
+	</body>
+</html>

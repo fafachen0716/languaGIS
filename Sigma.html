@@ -1,0 +1,418 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>專欄文章</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">回主頁</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+				<nav id="menu">
+					<h2>探索</h2>
+					<ul>
+						<li><a href="index.html">首頁</a></li>
+						<li><a href="sePresenter.html">自我介紹</a></li>
+						<li><a href="BMI.html">BMI計算機</a></li>
+						<li><a href="https://fafachen0716.shinyapps.io/Lab4/">Rshiny Lab4</a></li>
+
+					</ul>
+				</nav>
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Sigma 計算機</h1>
+							<center><span class="symbol"><img src="images/Sigma.svg" alt="" width=30% /></span></center>
+
+
+							<p>求和符號（讀作sigma或summation），是歐拉於1755年首先使用的。這個符號是源自於希臘文σογμαρω（增加）的字頭，Σ正是σ的大寫。[來源請求]
+
+								求和指的是將給定的數值相加的過程，又稱為加總。</p>
+							<p><i>摘自維基百科</i></p>
+
+							<form method="post" action="#" id= form>
+								<div class="fields">
+									<div class="field half">
+										<input type="text" name="start" id="start" placeholder="start" />
+									</div>
+
+									<div class="field half">
+										<input type="text" name="end" id="end" placeholder="end" />
+									</div>
+
+									<div class="field half">
+										<input type="text" name="threshold" id="threshold" placeholder="threshold" />
+									</div>
+
+									</div>
+								</div>
+
+								<center><button id='sigma_for' type="button" >計算Sigma（For）</button>
+								<button id='sigma_while' type="button" >計算Sigma（while）</button>
+								<button id='sigma_do_while' type="button" >計算Sigma（do while）</button></center>
+							</form>
+							<div id="para" style="display:none">
+
+							<center><div id="para1">NA</div></center>
+								</div>
+
+
+
+							<a id="downloadAnchorElem" style="display:none"></a>
+
+							<span class="image main" ><img src="images/article5.jpg" alt="" /></span>
+
+
+						</div>
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<div class="inner">
+						<section>
+							<h2>聯繫我</h2>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field half">
+										<input type="text" name="name" id="name" placeholder="姓名" />
+									</div>
+									<div class="field half">
+										<input type="email" name="email" id="email" placeholder="郵件" />
+									</div>
+									<div class="field">
+										<textarea name="message" id="message" placeholder="說說話"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="送出" class="primary" /></li>
+								</ul>
+
+
+							</form>
+						</section>
+						<section>
+							<h2>追蹤</h2>
+							<ul class="icons">
+								<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+								<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+								<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+								<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+							</ul>
+						</section>
+						<ul class="copyright">
+							<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+
+
+			<script>  
+				$(function(){   
+				
+					
+
+					
+				//$(document).ready(function(){ });
+				  $("#sigma_for").click(function(){
+					var x = document.getElementById("para");
+					if (x.style.display === "none") {
+						x.style.display = "block";
+					}
+
+
+					var form = $(this);
+
+					//轉換String to JSON
+
+					var data=$('#form').serializeArray()
+					function objectifyForm(formArray) {
+					//serialize data function
+					var returnArray = {};
+					for (var i = 0; i < formArray.length; i++){
+						returnArray[formArray[i]['name']] = formArray[i]['value'];
+					}
+					return returnArray;
+
+
+
+				}
+				
+
+
+
+				var data=objectifyForm(data)
+ 
+
+
+				
+				if(data.start==""){
+				$("#para1").html("錯誤！沒有起始值，無法進行加總！");  
+				return 0   	
+				}else if(data.end==""){
+				$("#para1").html("錯誤！沒有結束值，無法進行加總！");
+				return 0   	
+				}else if(Number(data.start)>Number(data.end)){
+				$("#para1").html("錯誤！起始值大於結束值，無法進行加總！");
+				return 0   	
+				}else if(data.threshold==""){
+				console.log("沒有threshold!")
+				data.threshold=Number(data.start)
+				thres=Number(data.threshold)
+				end=Number(data.end)
+				start=Number(data.start)
+
+				console.log(Number(data.threshold))
+				console.log(data.threshold)
+
+				}else{
+				thres=Number(data.threshold)
+				end=Number(data.end)
+				start=Number(data.start)
+
+				}
+
+
+
+				if(thres>end ){
+
+				$("#para1").html("錯誤！閾值大於結束值，無法進行加總！");   
+
+				}else if(thres<start){
+				console.log(thres)
+				console.log(start)
+				$("#para1").html("錯誤！閾值小於起始值，無法進行加總！");   
+
+				}
+				else{
+
+
+				var sum = 0
+				for (let i = thres; i <= end; i++) {
+				sum+=i;
+				}
+
+				//$("#para1").css("color","red").css("background-color","black");        
+				$("#para1").html("Sum = "+ sum);   
+
+				}});
+
+
+				});      
+
+
+				$(function(){   
+
+
+				$("#sigma_while").click(function(){
+					var x = document.getElementById("para");
+					if (x.style.display === "none") {
+						x.style.display = "block";
+					}
+
+
+					var form = $(this);
+
+					//轉換String to JSON
+
+					var data=$('#form').serializeArray()
+					function objectifyForm(formArray) {
+					//serialize data function
+					var returnArray = {};
+					for (var i = 0; i < formArray.length; i++){
+						returnArray[formArray[i]['name']] = formArray[i]['value'];
+					}
+					return returnArray;
+
+
+
+				}
+				
+
+
+
+				var data=objectifyForm(data)
+ 
+				if(data.start==""){
+				$("#para1").html("錯誤！沒有起始值，無法進行加總！");  
+				return 0   	
+				}else if(data.end==""){
+				$("#para1").html("錯誤！沒有結束值，無法進行加總！");
+				return 0   	
+				}else if(Number(data.start)>Number(data.end)){
+				$("#para1").html("錯誤！起始值大於結束值，無法進行加總！");
+				return 0   	
+				}else if(data.threshold==""){
+				console.log("沒有threshold!")
+				data.threshold=Number(data.start)
+				thres=Number(data.threshold)
+				end=Number(data.end)
+				start=Number(data.start)
+
+				console.log(Number(data.threshold))
+				console.log(data.threshold)
+
+				}else{
+				thres=Number(data.threshold)
+				end=Number(data.end)
+				start=Number(data.start)
+
+				}
+
+				if(thres>end ){
+
+				$("#para1").html("錯誤！閾值大於結束值，無法進行加總！");   
+
+				}else if(thres<start){
+				$("#para1").html("錯誤！閾值小於起始值，無法進行加總！");   
+
+				}
+				else{
+
+				var sum = 0
+
+				while(thres<=end){
+					sum+=thres
+					thres++
+				}
+
+				$("#para1").html("Sum = "+ sum);   
+
+				}});
+
+
+
+				$("#sigma_do_while").click(function(){
+					var x = document.getElementById("para");
+					if (x.style.display === "none") {
+						x.style.display = "block";
+					}
+
+
+					var form = $(this);
+
+					//轉換String to JSON
+
+					var data=$('#form').serializeArray()
+					function objectifyForm(formArray) {
+					//serialize data function
+					var returnArray = {};
+					for (var i = 0; i < formArray.length; i++){
+						returnArray[formArray[i]['name']] = formArray[i]['value'];
+					}
+					return returnArray;
+
+
+
+				}
+				
+
+
+
+				var data=objectifyForm(data)
+ 
+				if(data.start==""){
+				$("#para1").html("錯誤！沒有起始值，無法進行加總！");  
+				return 0   	
+				}else if(data.end==""){
+				$("#para1").html("錯誤！沒有結束值，無法進行加總！");
+				return 0   	
+				}else if(Number(data.start)>Number(data.end)){
+				$("#para1").html("錯誤！起始值大於結束值，無法進行加總！");
+				return 0   	
+				}else if(data.threshold==""){
+				console.log("沒有threshold!")
+				data.threshold=Number(data.start)
+				thres=Number(data.threshold)
+				end=Number(data.end)
+				start=Number(data.start)
+
+				console.log(Number(data.threshold))
+				console.log(data.threshold)
+
+				}else{
+				thres=Number(data.threshold)
+				end=Number(data.end)
+				start=Number(data.start)
+
+				}
+
+				if(thres>end ){
+
+				$("#para1").html("錯誤！閾值大於結束值，無法進行加總！");   
+
+				}else if(thres<start){
+				$("#para1").html("錯誤！閾值小於起始值，無法進行加總！");   
+
+				}
+				else{
+
+				var sum = 0
+
+				do{
+				sum+=thres
+				thres++
+				}
+				while (thres<=end);
+
+				//$("#para1").css("color","red").css("background-color","black");        
+				$("#para1").html("Sum = "+ sum);   
+
+				}});
+
+
+
+				});  
+
+
+
+
+
+			  </script>
+
+
+
+
+	</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE HTML>
+<!--
+	reference:
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>語言學好好玩</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<link id="pagestyle" rel="stylesheet" type ="text/css" href="assets/css/main.css">
+		<link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v6.15.1/css/ol.css"
+		type="text/css">
+	  <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v6.15.1/build/ol.js"></script>
+	  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.1.1"></script>
+	  <link rel="stylesheet" href="assets/css/map.css" />
+		<!-- OpenLayers -->
+		<link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v7.3.0/css/ol.css" type="text/css">
+		<style>
+			.map {
+			  height: 800px;
+			  width: 100%;
+			}
+		  </style>
+		
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">語言學好好玩</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">探索</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>探索</h2>
+						<ul>
+							<li><a href="index.html">首頁</a></li>
+							<li><a href="sePresenter.html">自我介紹</a></li>
+							<li><a href="BMI.html">BMI計算機</a></li>
+							<li><a href="Sigma.html">Sigma計算機</a></li>
+
+							<li><a href="https://fafachen0716.shinyapps.io/Lab4/">Rshiny Lab4</a></li>
+
+						</ul>
+					</nav>
+
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<header>
+								<h1>歡迎來到<a href="sePresenter.html">陳勝發</a>的網站，在這裡你可以盡情探索語言學小知識！<br /></h1>
+								<p>或者是點擊<a href="sePresenter.html">這裡</a>查看我的自我介紹！</p>
+								<p>如果對自己的身體質量指數感到好奇，請造訪我的<a href="BMI.html">BMI計算機</a>！</p>
+								<p>如果想查看特定數字區間的加總，請參考<a href="Sigma.html">Sigma計算機</a>！</p>
+
+							</header>
+
+							<!-- the first map -->
+							<footer id="footer">
+							<div class="inner">
+							<div id="map" class="map">
+							<script type="text/javascript">
+							
+							  var map = new ol.Map({
+								target: 'map',
+								layers: [
+								  new ol.layer.Tile({
+									source: new ol.source.OSM()
+								  })
+								],
+								view: new ol.View({
+								  center: ol.proj.fromLonLat([120.6718112, 24.1502971]),
+								  zoom: 16
+								})
+							  });
+
+							var div = document.createElement('div');
+							div.innerHTML = '<p>Hello world!</p>';
+
+							var overlay = new ol.Overlay({
+							element: div,
+							position: [0, 10000000]
+							});
+
+							map.addOverlay(overlay);
+															
+							</script>
+							</div>
+							</div>
+							</footer>
+
+							<!-- choosing style -->
+							<footer id="footer">
+								<div class="inner">
+									<section>
+										<center><h2>在開始前，選擇你喜歡的風格來瀏覽這個網頁吧！</h2></center>
+										<form method="post" action="#">
+											<ul class="actions special">
+																								
+												<button id='btn0' type="button" onclick="applyCSS('assets/css/main.css')">原始風格</button>
+												<button id='btn1' type="button" onclick="applyCSS('assets/css/style2.css');">風格2</button>
+												<button id='btn2' type="button" onclick="applyCSS('assets/css/style3.css');">風格3</button>
+												<button id='btn2' type="button" onclick="removeCSS();">不要讓我看到CSS!</button>
+
+											</ul>
+										</form>
+									</section>
+								</div>
+							</footer>
+							
+							<section class="tiles">
+								<article class="style1">
+									<span class="image">
+										<img src="images/pic01.jpg" alt="" />
+									</span>
+									<a href="article1.html">
+										<h2>語言學小知識#1</h2>
+										<div class="content">
+											<p>語言能力是天生的嗎？</p>
+										</div>
+									</a>
+								</article>
+								<article class="style1">
+									<span class="image">
+										<img src="images/pic02.jpg" alt="" />
+									</span>
+									<a href="article2.html">
+										<h2>語言學小知識#2</h2>
+										<div class="content">
+											<p>「葡萄」是一個字還是兩個字？字根與前中後綴（上）</p>
+										</div>
+									</a>
+								</article>
+								<article class="style1">
+									<span class="image">
+										<img src="images/pic03.jpg" alt="" />
+									</span>
+									<a href="article3.html">
+										<h2>語言學小知識#3</h2>
+										<div class="content">
+											<p>詞綴家族大解析！字根與前中後綴（下）</p>
+										</div>
+									</a>
+								</article>
+								<article class="style1">
+									<span class="image">
+										<img src="images/pic04.jpg" alt="" />
+									</span>
+									<a href="article4.html">
+										<h2>語言學小知識#4</h2>
+										<div class="content">
+											<p>超級變變變！曲折的人生，屈折的語言！</p>
+										</div>
+									</a>
+								</article>
+								<article class="style1">
+									<span class="image">
+										<img src="images/pic05.jpg" alt="" />
+									</span>
+									<a href="article5.html">
+										<h2>語言學小知識#5</h2>
+										<div class="content">
+											<p>「我怎麼學會新單字的？」人類理解語言的方式大揭密！</p>
+										</div>
+									</a>
+								</article>
+								<article class="style1">
+									<span class="image">
+										<img src="images/pic06.jpg" alt="" />
+									</span>
+									<a href="article6.html">
+										<h2>語言學小知識#6</h2>
+										<div class="content">
+											<p>「我愛你、你愛他」，淺談命題與真值（上）</p>
+										</div>
+									</a>
+								</article>
+							</section>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>聯繫我</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="姓名" />
+										</div>
+										<div class="field half">
+											<input type="email" name="email" id="email" placeholder="郵件" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="說說話"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="送出" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>追蹤</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+
+			<script>
+				$("#prospects_form").submit(function(e) {
+					e.preventDefault();
+				});
+				//CSS apply CSS
+				var cssId = 'main.css';
+				
+				//reference:https://stackoverflow.com/questions/14292997/changing-style-sheet-javascript
+				function applyCSS(url){
+					removeCSS();
+					var head  = document.getElementsByTagName('head')[0];
+					var link  = document.createElement('link');
+					link.id   = cssId;
+					link.rel  = 'stylesheet';
+					link.type = 'text/css';
+					link.href = url;
+					link.media = 'all';
+					head.appendChild(link);
+					}		
+				
+				function removeCSS(){
+				  //if (document.getElementById(cssId)){
+					//document.getElementById(cssId).remove();
+				  //}
+				//or this is similar
+				//reference: https://stackoverflow.com/questions/5033650/how-to-dynamically-remove-a-stylesheet-from-the-current-page
+				var elements = document.querySelectorAll('link[rel=stylesheet]');
+				for(var i=0;i<elements.length;i++){
+					elements[i].parentNode.removeChild(elements[i]);
+				}
+				
+				}
+			</script>
+
+
+	</body>
+</html>
